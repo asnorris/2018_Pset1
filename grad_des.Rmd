@@ -63,7 +63,7 @@ f.prime(-2)
 
 ```
 
-The output of f.prime(-2) is *`r f.prime(-2)`*
+The output of f.prime(-2) is **`r f.prime(-2)`**
 
 ## Question 3 [3 pts]
 Write a function, `grad.des(x1)` to perform gradient descent from the starting point x1. Take the step sizes $\alpha_n=\frac{1}{n}$ and precision $\epsilon=0.000001$, and let the maximum iterations be 10,000. That is compute:
@@ -131,14 +131,17 @@ Start from $x_1=-2$, what is the minimum your function finds? Plot the points $(
 
 x <- grad.des(-2)
 
-
 # print the x and f(x) minimums
+
+# x
 x$x_min
+
+# f(x)
 x$f_min
 
 ```
 
-The function finds a minimum at the point (`rx$x_min`,`rx$f_min`).
+
 
 ```{r}
 
@@ -175,8 +178,18 @@ for (i in 1:10000) {
   
 }
 
-
+# plot values
 hist(minima)
+
+# find which start value leads to the lowest minima
+which(minima==min(minima))
+
+# print the minima x value
+start_val[3979]
+
+# print the global minimum value
+f(start_val[3979])
+
 
 ```
 
